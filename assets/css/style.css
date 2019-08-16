@@ -1,0 +1,67 @@
+.list {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.list-items, .list-items-selected {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #eee;
+    max-height: 140px;
+    overflow: auto;
+    margin: 2px 0;
+}
+.list-items li, .list-items-selected li {
+    padding: 5px 10px;
+    border-bottom: solid #eee 1px;
+}
+.list-items li:hover, .list-items-selected li:hover {
+    background: #dbdbdb;
+
+}
+.list-items li.selected, .list-items-selected li.selected {
+    color: hsl(0, 0%, 56%);
+    background: hsl(0, 0%, 96%);
+}
+
+.list-items li .action, .list-items-selected li .action {
+    float: right;
+    cursor: pointer;
+    color: #000;
+}
+.list-items li .delete:hover{
+    text-decoration: underline;
+}
+.list-items-selected {
+    height: auto;
+}
+.list {
+    position: relative;
+    font-weight: bold;
+    background: #eee;   
+    margin: 0;
+}
+.list:hover {
+    cursor: pointer;            
+}
+.list::after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #5f5f5f;
+}

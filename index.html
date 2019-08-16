@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Selector múltiple Elegante - CSS+JavaScript(OOP)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+
+    <!-- decorated select -->
+    <script type="text/javascript" src="assets/js/decorated-select.js"></script>
+   
+</head>
+<body>
+    
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Selector multiple elegante usando CSS y Programación Orientada a Objetos con JavaScript</h1>
+            <p class="lead">Tecnologías: HTML5+JavaScript(OOP)</p>
+            <p>Creando selectores múltiples elegantes usando CSS y JavaScript(OOP)</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <h2>Example 1: </h2>
+        <div class="form-group">
+            <label for="selector">Provincias Castilla y León:</label>
+            <select name="provincias" class="provincias form-control" multiple style="display: none">
+                <option value="10" label="León" selected="selected">León</option>
+                <option value="20" label="Valladolid">Valladolid</option>
+                <option value="30" label="Salamanca" selected="selected">Salamanca</option>
+                <option value="40" label="Zamora">Zamora</option>
+                <option value="50" label="Soria">Soria</option>
+                <option value="60" label="Ávila">Ávila</option>
+                <option value="70" label="Segovia">Segovia</option>
+                <option value="80" label="Burgos">Burgos</option>
+                <option value="90" label="Palencia">Palencia</option>                
+            </select>
+        </div>
+        <script>        
+            let provincias = new decoratedSelect();
+            provincias.start({
+                type : 'select', 
+                name : 'provincias',
+                class : '.provincias'
+            }); 
+        </script>        
+
+        <h2>Example 2:</h2>
+        <div class="form-group">
+            <label for="selector">Lenguajes programación:</label>
+            <select name="lenguajes" class="lenguajes form-control" multiple style="display: none">
+                <option value="10" label="PHP" selected="selected">PHP</option>
+                <option value="20" label="HTML5">HTML5</option>
+                <option value="30" label="JavaScript" selected="selected">JavaScript</option>
+                <option value="40" label="CSS">CSS</option>
+                <option value="50" label="SQL">SQL</option>                        
+            </select>
+        </div>
+        
+        <script> 
+        let lenguajes = new decoratedSelect();       
+        lenguajes.start({
+            type : 'select', 
+            name : 'lenguajes', 
+            class : '.lenguajes'
+        });
+        </script>
+
+
+    
+    </div>    
+</body>
+</html>
