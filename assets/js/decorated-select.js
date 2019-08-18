@@ -10,6 +10,7 @@ class decoratedSelect {
             this.name = params.name;  
             this.class = params.class;          
             this.selector = document.querySelector(params.class); // select class
+            this.sortSelector();
             this.createContainers();
             this.populateOptions();
             this.eventOpenList();
@@ -52,29 +53,25 @@ class decoratedSelect {
      * Populate lists with selected and unselected items
      */
     populateOptions () {          
-        
+         
         for (let i = 0; i < this.selector.length; i++) {
 
-            let selected;
-            let li;
+            
+            let selected;            
             let id = this.selector[i].value; // id
             let value = this.selector[i].text; // value 
 
             (this.selector[i].selected == true) ? selected = " selected" : selected = "";
 
             // populate options from select into unordered list
-            li = document.createElement('li');                
+            let li = document.createElement('li');                
             li.innerHTML = value;
             li.setAttribute('id', "item-"+id);
             li.setAttribute('class', 'item item-'+id+selected);
             li.setAttribute('data-id', id);
             li.setAttribute('data-value', value);
 
-            if (this.selector[i].selected == true) {
-                this.ulSelectedElements.append(li);    
-            } else {
-                this.ulUnselectedElements.append(li);
-            }
+            (this.selector[i].selected == true) ? this.ulSelectedElements.append(li) : this.ulUnselectedElements.append(li);
 
             // actions to add/delete elements
             let action = document.createElement("div");
@@ -140,6 +137,7 @@ class decoratedSelect {
                     evt.path[0].innerHTML = "Seleccionar";        
                     this.ulUnselectedElements.append(itemToAdd);                              
                 }                    
+                           
 
                 // update selector
                 this.updateSelect( id );               
@@ -162,5 +160,34 @@ class decoratedSelect {
             }
         }
 
+    }    
+
+    /**
+     * order options from selector <select></select>
+     */
+    sortSelector () {
+
+        let tmp = []; // temporal array     
+        let selected;
+       
+        for ( let i=0; i<this.selector.length; i++) {
+            tmp.push({
+                label: this.selector[i].label, // attribute label
+                text: this.selector[i].text, // text value from option               
+                id: this.selector[i].value, // attribute id
+                selected: this.selector[i].selected // attribute selected
+            });            
+        }                
+        // sort by label the HML5 select options
+        tmp.sort( (a, b) => (a.label > b.label) ? 1 : -1)        
+        // console.log(tmp)
+
+        // populate ordered options into the selector
+        for ( let i = 0; i<tmp.length;i++) {                  
+            (tmp[i].selected === true) ? selected = true : selected = false;
+            this.selector.options[i] = new Option(tmp[i].text, tmp[i].label, false, selected ); 
+        }
+
+       
     }
 }
