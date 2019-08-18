@@ -1,10 +1,10 @@
 # Decorated multiple selector
 All notable changes to this project will be documented in this file.
 
-## Unreleased 
+## Unreleased
 
 ## [0.2] - 2019-08-18
-##Added
+### Added
 - Automatic selection sorting
 
 ## [0.1] - 2019-08-15
