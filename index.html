@@ -12,10 +12,10 @@
 
     <!-- decorated select -->
     <script type="text/javascript" src="assets/js/decorated-select.js"></script>
-   
+
 </head>
 <body>
-    
+
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Selector multiple elegante usando CSS y Programación Orientada a Objetos con JavaScript</h1>
@@ -29,7 +29,7 @@
         <h2>Example 1: </h2>
         <div class="form-group">
             <label for="selector">Provincias Castilla y León:</label>
-            <select name="provincias" class="provincias form-control" multiple style="display:none">
+            <select name="provincias" class="provincias form-control" multiple>
                 <option value="10" label="leon" selected="selected">León</option>
                 <option value="20" label="valladolid">Valladolid</option>
                 <option value="30" label="salamanca" selected="selected">Salamanca</option>
@@ -38,35 +38,35 @@
                 <option value="60" label="avila">Ávila</option>
                 <option value="70" label="segovia">Segovia</option>
                 <option value="80" label="burgos">Burgos</option>
-                <option value="90" label="palencia">Palencia</option>                
+                <option value="90" label="palencia">Palencia</option>
             </select>
         </div>
-        <script>        
+        <script>
             let provincias = new decoratedSelect();
             provincias.start({
-                type : 'select', 
+                type : 'select',
                 name : 'provincias',
                 class : '.provincias'
-            }); 
-        </script>        
+            });
+        </script>
 
         <h2>Example 2:</h2>
         <div class="form-group">
             <label for="selector">Lenguajes programación:</label>
-            <select name="lenguajes" class="lenguajes form-control" multiple style="display: none">
+            <select name="lenguajes" class="lenguajes form-control" multiple>
                 <option value="10" label="PHP" selected="selected">PHP</option>
                 <option value="20" label="HTML5">HTML5</option>
                 <option value="30" label="JavaScript" selected="selected">JavaScript</option>
                 <option value="40" label="CSS">CSS</option>
-                <option value="50" label="SQL">SQL</option>                        
+                <option value="50" label="SQL">SQL</option>
             </select>
         </div>
-        
-        <script> 
-        let lenguajes = new decoratedSelect();       
+
+        <script>
+        let lenguajes = new decoratedSelect();
         lenguajes.start({
-            type : 'select', 
-            name : 'lenguajes', 
+            type : 'select',
+            name : 'lenguajes',
             class : '.lenguajes'
         });
         </script>
@@ -74,6 +74,6 @@
 
     <hr />
     <script async src="//jsfiddle.net/jl3377/Lrwubmaf/embed/"></script>
-    </div>    
+    </div>
 </body>
 </html>
